@@ -120,6 +120,7 @@ def compute_cashflow(
         )
 
     return {
+        "months_covered": len(series),
         "avg_monthly_income": round(avg_income, 2),
         "avg_monthly_expenses": round(avg_expenses, 2),
         "avg_essential_spend": round(avg_essential, 2),

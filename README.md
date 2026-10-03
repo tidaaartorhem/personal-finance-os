@@ -1,5 +1,135 @@
 # personal-finance-os
 
-The cash-flow operating system for independent earners.
+**The cash-flow operating system for independent earners.**
 
-More coming soon: deterministic pipeline, live dashboard, docs.
+## The problem
+
+Salary-based budgeting apps assume your money arrives in a tidy lump every
+two weeks. Freelancers, consultants, and solo operators live differently:
+they get paid in irregular lumps, owe tax months later on money that already
+feels spent, and bleed cash to forgotten subscriptions. The result is a
+familiar anxiety: a great month makes you feel rich, a slow month makes you
+feel broke, and you never quite know what you can safely spend.
+
+personal-finance-os answers one question: **given my actual lumpy income and
+spending history, what can I safely spend each month, and what do I need to
+set aside?**
+
+## What it does
+
+Import your bank CSVs and get:
+
+- **Auto-categorized spending** from an editable keyword/regex rule file,
+  with an explicit `Uncategorized` bucket so nothing is silently mislabeled.
+- **Recurring-charge detection** that finds real subscriptions: 3+ monthly
+  charges on a 28-32 day rhythm, amounts within 15%. One-offs and quarterly
+  bills are ignored.
+- **A safe monthly spend number**: average income minus essential spend
+  (housing, utilities, insurance, groceries) minus a tax set-aside.
+- **Runway** in months at your average burn, from an assumed liquid cash
+  figure you pass on the command line.
+- **An Ontario self-employed tax plan**: estimated 2026 federal and Ontario
+  marginal tax plus self-employed CPP on annualized net business income, with
+  a monthly set-aside target and a full bracket-by-bracket breakdown.
+- **A deterministic monthly money brief**: top spend categories, anomaly
+  flags (transactions over 2.5x their category's monthly average), the
+  subscription kill list with recoverable totals, and a 3-month forecast.
+  Plain declarative sentences, no hype.
+
+Everything runs on auditable rules. No API keys, no LLM calls, no accounts.
+
+```
+bank CSV
+   |
+   v
+ingest.py ── canonical transactions (tolerant dates/amounts, bad rows skipped)
+   |
+   v
+categorize.py ── rule-based categories from data/category-rules.json
+   |
+   +---> subscriptions.py ── monthly recurring-charge detection
+   +---> tax.py ──────────── Ontario self-employed estimate (2026 approx)
+   |                            |
+   v                            v
+cashflow.py ── safe spend, runway, 3-month forecast
+   |
+   v
+brief.py ── deterministic monthly money brief (Markdown + JSON)
+   |
+   v
+web/public/finance.json ── dashboard data
+```
+
+## Tax disclaimer
+
+Tax figures are **planning estimates based on approximate 2026 federal and
+Ontario brackets plus estimated self-employed CPP contributions**. They are
+not tax advice and are not a substitute for a tax professional. The dashboard
+labels them as estimates everywhere they appear.
+
+## Quickstart
+
+```bash
+# run the full pipeline on the sample data
+python3 services/main.py build --input data/sample-transactions.csv --cash 15000
+
+# outputs: web/public/finance.json (dashboard data), data/latest-brief.md
+
+# build the dashboard (re-runs the pipeline, then builds the site)
+cd web
+npm install
+npm run build    # tsc + prepare-public + vite build -> web/dist
+npm run dev      # local dev server
+```
+
+Use your own data by pointing `--input` at any bank CSV with date,
+description, and amount columns. Header rows are auto-detected; without a
+header the columns are assumed to be date, description, amount in that order.
+
+## Tests
+
+```bash
+python3 -m pytest tests/      # 16 tests: ingest, categorize, subscriptions, cashflow, tax, brief, pipeline
+cd web && npm test            # vitest: formatting helpers
+```
+
+## Project structure
+
+```
+services/            Python 3 service layer (stdlib only, no pip deps)
+  ingest.py          CSV -> canonical Transaction records
+  categorize.py      rule-based categorizer (data/category-rules.json)
+  subscriptions.py   recurring-charge detector
+  cashflow.py        monthly series, safe spend, runway, forecast
+  tax.py             Ontario self-employed tax estimate (2026 approximations)
+  brief.py           deterministic monthly money brief
+  main.py            CLI orchestrator: python services/main.py build
+data/
+  sample-transactions.csv   224 SYNTHETIC transactions, Jan-Jun 2026
+  gen_sample.py             deterministic generator (seed 42)
+  category-rules.json       editable keyword/regex categorization rules
+  latest-brief.md           generated money brief
+tests/               pytest suite (16 tests)
+web/                 Vite + React 18 + TypeScript dashboard
+  public/finance.json  pipeline output consumed by the frontend
+  scripts/prepare-public.cjs  regenerates finance.json before each build
+firebase.json        Firebase Hosting config (public = web/dist)
+```
+
+## Sample data
+
+`data/sample-transactions.csv` is **fully synthetic**, generated by
+`data/gen_sample.py` with seed 42 so it is reproducible. It contains 224
+invented transactions from Jan to Jun 2026: lumpy freelance invoice income,
+rent and bills, groceries, restaurants, transit, travel, a laptop purchase,
+10 recurring monthly subscriptions, plus a quarterly charge and an annual
+charge that the detector correctly ignores. Replace it with your own CSV to
+analyze real data.
+
+## Design notes
+
+- Light mode, minimal UI, one emerald accent, hand-rolled SVG charts.
+- The cancelled-subscription checkboxes persist in `localStorage` and the
+  recoverable total updates live.
+- Deterministic: the same CSV always produces the same numbers. Every figure
+  on the dashboard traces back to the pipeline output in `finance.json`.

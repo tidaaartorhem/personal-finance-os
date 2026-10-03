@@ -7,10 +7,12 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
 
 from services import ingest  # noqa: E402
 from services import categorize, subscriptions, cashflow, tax, brief  # noqa: E402

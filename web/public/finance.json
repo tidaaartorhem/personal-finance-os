@@ -1,0 +1,427 @@
+{
+  "generated_at": "2026-10-03T12:45:38.607899+00:00",
+  "period": {
+    "start": "2026-01-01",
+    "end": "2026-06-27"
+  },
+  "summary": {
+    "transactions": 224,
+    "skipped_rows": 1,
+    "total_income": 97402.37,
+    "total_expenses": 32568.78,
+    "business_expenses": 3676.88,
+    "annualized_net_business_income": 187450.98,
+    "warnings": [
+      "line 226: skipped (unrecognized date format: 'oops')"
+    ]
+  },
+  "monthly_series": [
+    {
+      "month": "2026-01",
+      "income": 13667.66,
+      "expenses": 4356.61,
+      "net": 9311.05
+    },
+    {
+      "month": "2026-02",
+      "income": 12004.92,
+      "expenses": 5006.01,
+      "net": 6998.91
+    },
+    {
+      "month": "2026-03",
+      "income": 16548.48,
+      "expenses": 5602.75,
+      "net": 10945.73
+    },
+    {
+      "month": "2026-04",
+      "income": 14220.7,
+      "expenses": 7410.71,
+      "net": 6809.99
+    },
+    {
+      "month": "2026-05",
+      "income": 10272.09,
+      "expenses": 5250.38,
+      "net": 5021.71
+    },
+    {
+      "month": "2026-06",
+      "income": 30688.52,
+      "expenses": 4942.32,
+      "net": 25746.2
+    }
+  ],
+  "categories": [
+    {
+      "category": "Housing",
+      "total": 14700.0,
+      "count": 6
+    },
+    {
+      "category": "Shopping",
+      "total": 5154.73,
+      "count": 11
+    },
+    {
+      "category": "Business",
+      "total": 3676.88,
+      "count": 32
+    },
+    {
+      "category": "Groceries",
+      "total": 2054.75,
+      "count": 25
+    },
+    {
+      "category": "Utilities",
+      "total": 1569.58,
+      "count": 18
+    },
+    {
+      "category": "Restaurants",
+      "total": 1115.78,
+      "count": 27
+    },
+    {
+      "category": "Subscriptions",
+      "total": 863.24,
+      "count": 36
+    },
+    {
+      "category": "Uncategorized",
+      "total": 834.59,
+      "count": 11
+    },
+    {
+      "category": "Travel",
+      "total": 798.0,
+      "count": 2
+    },
+    {
+      "category": "Transit",
+      "total": 732.55,
+      "count": 18
+    },
+    {
+      "category": "Health",
+      "total": 549.68,
+      "count": 12
+    },
+    {
+      "category": "Insurance",
+      "total": 519.0,
+      "count": 6
+    }
+  ],
+  "subscriptions": [
+    {
+      "merchant": "interac e-transfer to landlord - rent",
+      "display_name": "Interac E-Transfer To Landlord - Rent",
+      "monthly_amount": 2450.0,
+      "annualized_cost": 29400.0,
+      "occurrences": 6,
+      "last_charge": "2026-06-01",
+      "median_interval_days": 31,
+      "confidence": 0.94
+    },
+    {
+      "merchant": "workhaus coworking",
+      "display_name": "Workhaus Coworking",
+      "monthly_amount": 325.0,
+      "annualized_cost": 3900.0,
+      "occurrences": 6,
+      "last_charge": "2026-06-03",
+      "median_interval_days": 31,
+      "confidence": 0.94
+    },
+    {
+      "merchant": "toronto hydro",
+      "display_name": "Toronto Hydro",
+      "monthly_amount": 115.34,
+      "annualized_cost": 1384.08,
+      "occurrences": 6,
+      "last_charge": "2026-06-14",
+      "median_interval_days": 31,
+      "confidence": 0.87
+    },
+    {
+      "merchant": "desjardins insurance",
+      "display_name": "Desjardins Insurance",
+      "monthly_amount": 86.5,
+      "annualized_cost": 1038.0,
+      "occurrences": 6,
+      "last_charge": "2026-06-10",
+      "median_interval_days": 31,
+      "confidence": 0.94
+    },
+    {
+      "merchant": "bell internet",
+      "display_name": "Bell Internet",
+      "monthly_amount": 79.95,
+      "annualized_cost": 959.4,
+      "occurrences": 6,
+      "last_charge": "2026-06-07",
+      "median_interval_days": 31,
+      "confidence": 0.94
+    },
+    {
+      "merchant": "adobe creative cloud",
+      "display_name": "Adobe Creative Cloud",
+      "monthly_amount": 69.99,
+      "annualized_cost": 839.88,
+      "occurrences": 6,
+      "last_charge": "2026-06-14",
+      "median_interval_days": 30,
+      "confidence": 0.95
+    },
+    {
+      "merchant": "rogers wireless",
+      "display_name": "Rogers Wireless",
+      "monthly_amount": 65.0,
+      "annualized_cost": 780.0,
+      "occurrences": 6,
+      "last_charge": "2026-06-25",
+      "median_interval_days": 31,
+      "confidence": 0.94
+    },
+    {
+      "merchant": "goodlife fitness",
+      "display_name": "Goodlife Fitness",
+      "monthly_amount": 49.99,
+      "annualized_cost": 599.88,
+      "occurrences": 6,
+      "last_charge": "2026-06-08",
+      "median_interval_days": 30,
+      "confidence": 0.91
+    },
+    {
+      "merchant": "aws canada",
+      "display_name": "Aws Canada",
+      "monthly_amount": 38.4,
+      "annualized_cost": 460.8,
+      "occurrences": 6,
+      "last_charge": "2026-06-27",
+      "median_interval_days": 30,
+      "confidence": 0.93
+    },
+    {
+      "merchant": "openai",
+      "display_name": "Openai",
+      "monthly_amount": 28.0,
+      "annualized_cost": 336.0,
+      "occurrences": 6,
+      "last_charge": "2026-06-10",
+      "median_interval_days": 32,
+      "confidence": 0.87
+    },
+    {
+      "merchant": "figma inc",
+      "display_name": "Figma Inc",
+      "monthly_amount": 19.8,
+      "annualized_cost": 237.6,
+      "occurrences": 6,
+      "last_charge": "2026-06-22",
+      "median_interval_days": 31,
+      "confidence": 0.9
+    },
+    {
+      "merchant": "netflix.com",
+      "display_name": "Netflix.Com",
+      "monthly_amount": 16.99,
+      "annualized_cost": 203.88,
+      "occurrences": 6,
+      "last_charge": "2026-06-05",
+      "median_interval_days": 30,
+      "confidence": 0.92
+    },
+    {
+      "merchant": "notion labs",
+      "display_name": "Notion Labs",
+      "monthly_amount": 12.5,
+      "annualized_cost": 150.0,
+      "occurrences": 6,
+      "last_charge": "2026-06-18",
+      "median_interval_days": 30,
+      "confidence": 0.93
+    },
+    {
+      "merchant": "spotify canada",
+      "display_name": "Spotify Canada",
+      "monthly_amount": 11.99,
+      "annualized_cost": 143.88,
+      "occurrences": 6,
+      "last_charge": "2026-06-11",
+      "median_interval_days": 31,
+      "confidence": 0.9
+    },
+    {
+      "merchant": "github inc",
+      "display_name": "Github Inc",
+      "monthly_amount": 7.0,
+      "annualized_cost": 84.0,
+      "occurrences": 6,
+      "last_charge": "2026-06-20",
+      "median_interval_days": 31,
+      "confidence": 0.89
+    },
+    {
+      "merchant": "icloud+ gb plan",
+      "display_name": "Icloud+ 50Gb Plan",
+      "monthly_amount": 4.03,
+      "annualized_cost": 48.36,
+      "occurrences": 6,
+      "last_charge": "2026-06-04",
+      "median_interval_days": 30,
+      "confidence": 0.91
+    }
+  ],
+  "cashflow": {
+    "months_covered": 6,
+    "avg_monthly_income": 16233.73,
+    "avg_monthly_expenses": 5428.13,
+    "avg_essential_spend": 3140.55,
+    "tax_setaside_monthly": 5440.64,
+    "safe_spend": 7652.53,
+    "runway_months": 2.8,
+    "liquid_cash_assumed": 15000.0,
+    "essential_categories": [
+      "Groceries",
+      "Housing",
+      "Insurance",
+      "Utilities"
+    ],
+    "forecast": [
+      {
+        "month": "2026-07",
+        "income": 16233.73,
+        "expenses": 5428.13,
+        "net": 10805.6
+      },
+      {
+        "month": "2026-08",
+        "income": 16233.73,
+        "expenses": 5428.13,
+        "net": 10805.6
+      },
+      {
+        "month": "2026-09",
+        "income": 16233.73,
+        "expenses": 5428.13,
+        "net": 10805.6
+      }
+    ]
+  },
+  "tax": {
+    "net_business_income": 187450.98,
+    "federal_tax": 39557.45,
+    "ontario_tax": 16809.28,
+    "cpp_self_employed": 8921.0,
+    "total_estimated": 65287.73,
+    "effective_rate": 0.3483,
+    "monthly_set_aside": 5440.64,
+    "bracket_breakdown": [
+      {
+        "lower": 0.0,
+        "upper": 57375,
+        "rate": 0.15,
+        "taxable_amount": 57375.0,
+        "tax": 8606.25,
+        "level": "Federal"
+      },
+      {
+        "lower": 57375,
+        "upper": 114750,
+        "rate": 0.205,
+        "taxable_amount": 57375,
+        "tax": 11761.88,
+        "level": "Federal"
+      },
+      {
+        "lower": 114750,
+        "upper": 177882,
+        "rate": 0.26,
+        "taxable_amount": 63132,
+        "tax": 16414.32,
+        "level": "Federal"
+      },
+      {
+        "lower": 177882,
+        "upper": 253414,
+        "rate": 0.29,
+        "taxable_amount": 9568.98,
+        "tax": 2775.0,
+        "level": "Federal"
+      },
+      {
+        "lower": 0.0,
+        "upper": 55231,
+        "rate": 0.0505,
+        "taxable_amount": 55231.0,
+        "tax": 2789.17,
+        "level": "Ontario"
+      },
+      {
+        "lower": 55231,
+        "upper": 110462,
+        "rate": 0.0915,
+        "taxable_amount": 55231,
+        "tax": 5053.64,
+        "level": "Ontario"
+      },
+      {
+        "lower": 110462,
+        "upper": 150000,
+        "rate": 0.1116,
+        "taxable_amount": 39538,
+        "tax": 4412.44,
+        "level": "Ontario"
+      },
+      {
+        "lower": 150000,
+        "upper": 220000,
+        "rate": 0.1216,
+        "taxable_amount": 37450.98,
+        "tax": 4554.04,
+        "level": "Ontario"
+      }
+    ],
+    "disclaimer": "Planning estimate only, based on approximate 2026 federal and Ontario brackets plus estimated self-employed CPP. Not tax advice."
+  },
+  "brief": {
+    "markdown": "# Monthly money brief\n\nOver the last 6 months you averaged $16,233.73 of income against $5,428.13 of expenses.\nYour top spend categories were Housing ($14,700.00), Shopping ($5,154.73), Business ($3,676.88).\nYour safe monthly spend is $7,652.53. That is average income minus essential spend of $3,140.55 and a tax set-aside of $5,440.64.\nYou have 16 recurring charges costing $3,380.48 a month, or $40,565.76 a year.\nAt your average burn, $15,000.00 of liquid cash covers 2.8 months.\nUnusual transactions worth a second look:\n- 2026-04-17: APPLE STORE ($2,899.00, 3.4x the Shopping monthly average).\n- 2026-05-22: PORTER AIRLINES ($486.00, 3.7x the Travel monthly average).\nTax planning: set aside $5,440.64 a month, an estimated effective rate of 34.8% on $187,450.98 of net business income. This is a planning estimate, not tax advice.\n\nNext month's forecast: $16,233.73 in, $5,428.13 out.",
+    "bullets": [
+      "Over the last 6 months you averaged $16,233.73 of income against $5,428.13 of expenses.",
+      "Your top spend categories were Housing ($14,700.00), Shopping ($5,154.73), Business ($3,676.88).",
+      "Your safe monthly spend is $7,652.53. That is average income minus essential spend of $3,140.55 and a tax set-aside of $5,440.64.",
+      "You have 16 recurring charges costing $3,380.48 a month, or $40,565.76 a year.",
+      "At your average burn, $15,000.00 of liquid cash covers 2.8 months.",
+      "Unusual transactions worth a second look:",
+      "- 2026-04-17: APPLE STORE ($2,899.00, 3.4x the Shopping monthly average).",
+      "- 2026-05-22: PORTER AIRLINES ($486.00, 3.7x the Travel monthly average).",
+      "Tax planning: set aside $5,440.64 a month, an estimated effective rate of 34.8% on $187,450.98 of net business income. This is a planning estimate, not tax advice.",
+      "Next month's forecast: $16,233.73 in, $5,428.13 out."
+    ],
+    "anomalies": [
+      {
+        "date": "2026-04-17",
+        "description": "APPLE STORE",
+        "category": "Shopping",
+        "amount": 2899.0,
+        "category_monthly_avg": 859.12,
+        "multiple": 3.4
+      },
+      {
+        "date": "2026-05-22",
+        "description": "PORTER AIRLINES",
+        "category": "Travel",
+        "amount": 486.0,
+        "category_monthly_avg": 133.0,
+        "multiple": 3.7
+      }
+    ],
+    "subscription_monthly_total": 3380.48,
+    "subscription_annual_total": 40565.76
+  }
+}
